@@ -1,0 +1,1 @@
+insert into todo (`description`, task, is_done, target_date, username, id) values ('First Todo','create TDD design', false, '2028-03-03', 'Dummy', 0)
