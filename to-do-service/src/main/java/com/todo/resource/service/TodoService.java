@@ -2,6 +2,7 @@ package com.todo.resource.service;
 
 
 import com.todo.entities.Todo;
+import com.todo.exceptions.TodoNotFoundException;
 import com.todo.resource.repository.TodoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class TodoService {
     }
 
     public Todo getTodo(final Integer id) {
-        return todoRepository.findById(id).orElseThrow(RuntimeException::new);
+        return todoRepository.findById(id).orElseThrow(TodoNotFoundException::new);
     }
 
     public Todo createTodo(final Todo todo) {
